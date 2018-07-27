@@ -98,7 +98,7 @@ public class NSGAII extends Algorithm {
       population.add(newSolution);
     } //for       
 
-      int times = 0;
+      int times = 1;
     // Generations 
     while (times <= 24) {
         times++;
@@ -121,12 +121,12 @@ public class NSGAII extends Algorithm {
           offspringPopulation.add(offSpring[0]);
           offspringPopulation.add(offSpring[1]);
           evaluations += 2;
-          System.out.println("Evaluations: " + evaluations + " -> Max: " + maxEvaluations);
+          //System.out.println("Evaluations: " + evaluations + " -> Max: " + maxEvaluations);
         //} // if
       } // for
 
       // Create the solutionSet union of solutionSet and offSpring
-      union = ((SolutionSet) population).union(offspringPopulation);
+      union = population.union(offspringPopulation);
 
       // Ranking the union
       Ranking ranking = new Ranking(union);

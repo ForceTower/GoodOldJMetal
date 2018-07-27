@@ -42,12 +42,12 @@ public class NSGAII_main_SelectInstances {
         String datasetLocation = "./dataset-test/" + datasetName + "/";
                 
         samples = new Samples();              
-        samples.loadSamples(datasetLocation + datasetName, "10", 1);  
+        samples.loadSamples(datasetLocation + datasetName, "10", 1);
         samples.printTraSamples();
         samples.printTestSamples();
         // There are two options: classification or regression
         samples.setTypeDataSet("classification");
-        samples.setTypeProcedure("training"); 
+        samples.setTypeProcedure("training");
         
         // dist gets the distance values among training samples
         //Map<String,Object> distance;       
@@ -58,7 +58,7 @@ public class NSGAII_main_SelectInstances {
         samples.printEuclideanDistanceMatrix(distance,"train");
         
         problem = new SelectInstances("ArrayBinarySolutionType", samples, distance);
-    
+
         // printing some data about the problem
         System.out.println("Problem name....................: " + problem.getName());
         System.out.println("Database name...................: " + datasetName);

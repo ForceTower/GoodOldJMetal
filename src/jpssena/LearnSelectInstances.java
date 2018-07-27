@@ -42,15 +42,6 @@ public class LearnSelectInstances extends Problem {
             evaluation.evaluateModel(knn, samples);
             //The number of correct answers
             accuracy = evaluation.correct();
-
-            /*
-            MultilayerPerceptron neuralNetwork = new MultilayerPerceptron();
-            neuralNetwork.buildClassifier(instances);
-            Evaluation neuralEvaluation = new Evaluation(instances);
-            neuralEvaluation.evaluateModel(neuralNetwork, samples);
-            double neuralAccuracy = neuralEvaluation.correct();
-            neuralAccuracy = neuralAccuracy/samples.numInstances();
-            */
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(-1);
@@ -68,7 +59,7 @@ public class LearnSelectInstances extends Problem {
         numberOfObjectives_  = 2;
 
         samples = new Instances(instances);
-        numberOfVariables_ = instances.numInstances();
+        numberOfVariables_ = instances.numAttributes();
         solutionType_ = new BinarySolutionType(this);
     }
 }
